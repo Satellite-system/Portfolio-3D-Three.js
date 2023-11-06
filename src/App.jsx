@@ -1,9 +1,14 @@
+import { BrowserRouter } from "react-router-dom"
+import {Navbar} from "./components"
+
 const App =()=> {
 
   return (
-    <div>
-      3D Portfolio
-    </div>
+    <BrowserRouter>
+      <div >
+        <Navbar />
+      </div>
+    </BrowserRouter>
   )
 }
 
