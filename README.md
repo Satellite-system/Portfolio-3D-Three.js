@@ -1,4 +1,6 @@
-# React + Vite
+# Portfolio 3D
+
+## Install npm Packages: npm i --legacy-peer-deps
 
 <h4><u>For Reference</u>: Build and Deploy an Amazing 3D Web Developer Portfolio in React JS - Beginner Three.js Tutorial </h4>
 
@@ -17,9 +19,9 @@ Currently, two official plugins are available:
 
 We have used Following: <br>
 <ul>
-   <li> <h4>React three Fiber</h4> Library for THREEJS in React. </li>
-   <li><h4>Tailwind Css </h4> for styling framework. </li>
-   <li><h4>Framer Motion </h4> for Animation in React. </li>
+   <li>React three Fiber: Library for THREEJS in React. </li>
+   <li>Tailwind Css: for styling framework. </li>
+   <li>Framer Motion: for Animation in React. </li>
 
 
 </ul>
