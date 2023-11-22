@@ -1,6 +1,6 @@
 # Portfolio 3D
 
-## Install npm Packages: npm i --legacy-peer-deps
+### <u>Install npm Packages</u>: npm i --legacy-peer-deps
 
 <h4><u>For Reference</u>: Build and Deploy an Amazing 3D Web Developer Portfolio in React JS - Beginner Three.js Tutorial </h4>
 
