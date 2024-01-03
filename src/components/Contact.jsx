@@ -5,6 +5,7 @@ import { styles } from "../styles";
 import { slideIn, textVariant } from "../utils/motion";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
+import emailjs from '@emailjs/browser';
 import { EarthCanvas } from "./canvas";
 
 const Contact = () => {
@@ -12,8 +13,30 @@ const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const formRef = useRef();
 
-  const handleSubmit = (e) => {};
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setForm({...form, [name]: value});
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs.send('service_c7ale69', 'template_wruexj5', {
+      from_name: form.name,
+      to_name: 'Adarsh-from-3d-portfolio',
+      from_email: form.email,
+      message: form.message
+    }, 'CYunoo-uqyW5E_8in').then(()=>{
+      setLoading(false);
+      alert('Thank you. I will get back to you as soon as possible.');
+      setForm({name: "", email: "", message: ""});
+    },(error) =>{
+      setLoading(false);
+      console.error(error);
+      alert('Something went wrong!')
+    });
+
+  };
 
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
@@ -44,7 +67,7 @@ const Contact = () => {
             <span className="text-white font-medium mb-4">Your Email</span>
             <input
               type="text"
-              name="name"
+              name="email"
               value={form.email}
               placeholder="What's your email?"
               onChange={handleChange}
