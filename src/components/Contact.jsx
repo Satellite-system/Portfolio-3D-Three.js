@@ -5,7 +5,7 @@ import { styles } from "../styles";
 import { slideIn, textVariant } from "../utils/motion";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import { EarthCanvas } from "./canvas";
 
 const Contact = () => {
@@ -14,28 +14,45 @@ const Contact = () => {
   const formRef = useRef();
 
   const handleChange = (e) => {
-    const {name, value} = e.target;
-    setForm({...form, [name]: value});
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
+    if (form.email == "") {
+      alert("Please provide your email");
+    } else if (form.name == "") {
+      alert("Please provide your Name");
+    } else if (form.message == "") {
+      alert("Please provide your Message");
+    } else {
+      setLoading(true);
 
-    emailjs.send('service_c7ale69', 'template_wruexj5', {
-      from_name: form.name,
-      to_name: 'Adarsh-from-3d-portfolio',
-      from_email: form.email,
-      message: form.message
-    }, 'CYunoo-uqyW5E_8in').then(()=>{
-      setLoading(false);
-      alert('Thank you. I will get back to you as soon as possible.');
-      setForm({name: "", email: "", message: ""});
-    },(error) =>{
-      setLoading(false);
-      console.error(error);
-      alert('Something went wrong!')
-    });
-
+      emailjs
+        .send(
+          "service_c7ale69",
+          "template_wruexj5",
+          {
+            from_name: form.name,
+            to_name: "Adarsh-from-3d-portfolio",
+            from_email: form.email,
+            message: form.message,
+          },
+          "CYunoo-uqyW5E_8in"
+        )
+        .then(
+          () => {
+            setLoading(false);
+            alert("Thank you. I will get back to you as soon as possible.");
+            setForm({ name: "", email: "", message: "" });
+          },
+          (error) => {
+            setLoading(false);
+            console.error(error);
+            alert("Something went wrong!");
+          }
+        );
+    }
   };
 
   return (
