@@ -1,4 +1,8 @@
-# Portfolio 3D
+
+# 3D Three js based Portfolio
+
+![screenshot-portfolio-3d-website netlify app-2024 01 04-21_09_29](https://github.com/Satellite-system/Portfolio-3D-Three.js/assets/67074308/2a1febd6-4a71-4625-86c0-4452c3189e14)
+
 
 ### <u>Install npm Packages</u>: npm i --legacy-peer-deps
 
@@ -9,6 +13,8 @@
 <li><Strong>Logo Images</Strong>: logo.com</li>
 <li><Strong>3D Image Model</Strong>: sketchfab.com > Explore > Downloadable , turbosquid.com</li>
 </ul>
+
+### About Vite js
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
